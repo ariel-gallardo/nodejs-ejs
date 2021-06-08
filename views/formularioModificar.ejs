@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/empleados">Lista</a>
+      <a href="/empleados/crear">Crear</a>
+    </nav>
+    <!-- div*7>input+label -->
+    <form id="formModificar" method="POST">
+      <div>
+        <label for="legajo">Legajo</label>
+        <input value="<%=empleado.legajo%>" required name="legajo" type="number" />
+      </div>
+      <div>
+        <label for="apellido">Apellido</label>
+        <input value="<%=empleado.apellido%>" required name="apellido" type="text" />
+      </div>
+      <div>
+        <label for="nombre">Nombre</label>
+        <input value="<%=empleado.nombre%>" required name="nombre" type="text" />
+      </div>
+      <div>
+        <label for="dni">Dni</label>
+        <input value="<%=empleado.dni%>" required name="dni" type="text" />
+      </div>
+      <div>
+        <label for="sector">Sector</label>
+        <input value="<%=empleado.sector%>" required name="sector" type="text" />
+      </div>
+      <div>
+        <label for="fechaingreso">Fecha de Ingreso</label>
+        <input required name="fechaingreso" type="date" />
+        <span>
+          <%=empleado.fechaingreso.toString()%>
+        </span>
+      </div>
+      <div>
+        <label for="activo">Activo</label>
+        <select required name="activo">
+          <option value="1" <%=empleado.activo == 1 ? 'selected' : ''%>>SI</option>
+          <option value="0" <%=empleado.activo == 0 ? 'selected' : ''%>>NO</option>
+        </select>
+      </div>
+      <div>
+        <button>Modificar</button>
+      </div>
+    </form>
+  </body>
+</html>

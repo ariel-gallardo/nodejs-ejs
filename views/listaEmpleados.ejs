@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empleados</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/empleados">Lista</a>
+        <a href="/empleados/crear">Crear</a>
+    </nav>
+    <h1>Lista de empleados</h1>
+    <% if(empleados){ %>
+    <table>
+        <thead>
+            <tr>
+                <th>Legajo</th>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>D.N.I</th>
+                <th>Sector</th>
+                <th>Fecha de Ingreso</th>
+                <th>Activo</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(empleado of empleados){ %>
+            <tr>
+                <td><%=empleado.legajo%></td>
+                <td><%=empleado.apellido%></td>
+                <td><%=empleado.nombre%></td>
+                <td><%=empleado.dni%></td>
+                <td><%=empleado.sector%></td>
+                <td><%=empleado.fechaingreso%></td>
+                <td><%=empleado.activo == 0 ? 'NO' : 'SI'%></td>
+                <td>
+                    <a href="/empleados/modificar/<%=empleado.legajo%>">Modificar</a>
+                    <form action="/empleados/borrar/<%= empleado.legajo %>" method="POST">
+                        <button>Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+    <%}else{%>
+        <h1>No hay empleados</h1>
+    <%}%>
+</body>
+</html>

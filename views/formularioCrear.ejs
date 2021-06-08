@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/empleados">Lista</a>
+      <a href="/empleados/crear">Crear</a>
+    </nav>
+    <!-- div*7>input+label -->
+    <form id="formCrear" method="POST">
+      <div>
+        <label for="legajo">Legajo</label>
+        <input name="legajo" type="number" />
+      </div>
+      <div>
+        <label for="apellido">Apellido</label>
+        <input name="apellido" type="text" />
+      </div>
+      <div>
+        <label for="nombre">Nombre</label>
+        <input name="nombre" type="text" />
+      </div>
+      <div>
+        <label for="dni">Dni</label>
+        <input name="dni" type="text" />
+      </div>
+      <div>
+        <label for="sector">Sector</label>
+        <input name="sector" type="text" />
+      </div>
+      <div>
+        <label for="fechaingreso">Fecha de Ingreso</label>
+        <input name="fechaingreso" type="date" />
+      </div>
+      <div>
+        <label for="activo">Activo</label>
+        <select name="activo">
+          <option value="1">SI</option>
+          <option value="0">NO</option>
+        </select>
+      </div>
+      <div>
+        <button>Crear</button>
+      </div>
+    </form>
+  </body>
+</html>
